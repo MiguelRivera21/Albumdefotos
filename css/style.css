@@ -31,8 +31,8 @@ header p {
 /* Galería de fotos */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas flexibles */
+    gap: 15px; /* Espacio entre las fotos */
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -45,11 +45,6 @@ header p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-}
-
-.photo-container:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .photo-container img {
@@ -72,20 +67,17 @@ header p {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    overflow-y: auto; /* Permite el desplazamiento dentro del modal */
 }
 
 .modal-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Cambia a columna en móviles */
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    width: 90%;
+    width: 90%; /* Ocupa el 90% del ancho en móviles */
     max-width: 1200px;
     position: relative;
-    max-height: 90vh; /* Limita la altura del modal */
-    overflow-y: auto; /* Permite el desplazamiento dentro del contenido */
 }
 
 .modal-left {
@@ -98,31 +90,29 @@ header p {
 
 .modal-left img {
     max-width: 100%;
-    max-height: 50vh; /* Ajusta la altura de la imagen en móviles */
+    max-height: 50vh; /* Altura máxima en móviles */
     object-fit: contain;
 }
 
 .modal-right {
     flex: 1;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow-y: auto; /* Permite el desplazamiento del texto */
 }
 
 .modal-right h2 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 0 10px;
-    color: #ff47f6;
+    color: #ff4757;
 }
 
 .modal-right p {
-    font-size: 1rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
     color: #333;
-    margin: 0;
-    overflow-y: auto; /* Permite el desplazamiento del texto */
 }
 
 .close-btn {
@@ -131,7 +121,7 @@ header p {
     right: 10px;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #333;
     cursor: pointer;
 }
@@ -185,4 +175,51 @@ header p {
 
 .fade-in {
     animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Título más pequeño en móviles */
+    }
+
+    header p {
+        font-size: 1.2rem; /* Texto más pequeño en móviles */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas más pequeñas */
+    }
+
+    .modal-content {
+        flex-direction: column; /* Cambia a columna en móviles */
+    }
+
+    .modal-left img {
+        max-height: 40vh; /* Altura máxima en móviles */
+    }
+
+    .modal-right {
+        padding: 10px; /* Menos padding en móviles */
+    }
+
+    .modal-right h2 {
+        font-size: 1.5rem; /* Título más pequeño en móviles */
+    }
+
+    .modal-right p {
+        font-size: 1rem; /* Texto más pequeño en móviles */
+    }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas medianas */
+    }
+
+    .modal-content {
+        width: 80%; /* Ancho del modal en tablets */
+    }
 }
