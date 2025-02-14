@@ -1,8 +1,8 @@
 /* Estilos generales */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #ff61b5, #ff0000); /* Degradado vibrante */
-    color: #fff; /* Texto blanco */
+    background: linear-gradient(135deg, #ff61b5, #ff0000);
+    color: #fff;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -10,30 +10,30 @@ body {
 
 header {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #ff4757; /* Color sólido para el header */
+    padding: 20px;
+    background-color: #ff4757;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-family: 'Pacifico', cursive; /* Tipografía llamativa para el título */
-    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
     margin: 0;
     color: #000000;
 }
 
 header p {
-    font-family: 'Dancing Script', cursive; /* Tipografía elegante para el texto */
-    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
     color: #000000;
 }
 
 /* Galería de fotos */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -75,10 +75,11 @@ header p {
 
 .modal-content {
     display: flex;
+    flex-direction: column;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     position: relative;
 }
@@ -93,28 +94,27 @@ header p {
 
 .modal-left img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 50vh;
     object-fit: contain;
 }
 
 .modal-right {
     flex: 1;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .modal-right h2 {
-     font-family: 'Pacifico', cursive; /*Tipografía llamativa para el título del modal */
-    font-size: 2rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
     margin: 0 0 10px;
-    color: #ff47f6; /* Color vibrante para el título */
+    color: #ff47f6;
 }
 
 .modal-right p {
-     /* Tipografía elegante para la descripción */
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #333;
 }
 
@@ -124,7 +124,7 @@ header p {
     right: 10px;
     background: transparent;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #333;
     cursor: pointer;
 }
@@ -147,4 +147,45 @@ header p {
 
 .fade-in {
     animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Media Queries para responsividad */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .modal-content {
+        flex-direction: row;
+    }
+
+    .modal-left img {
+        max-height: 80vh;
+    }
+
+    .modal-right {
+        padding: 20px;
+    }
+
+    .modal-right h2 {
+        font-size: 2rem;
+    }
+
+    .modal-right p {
+        font-size: 1.2rem;
+    }
+
+    .close-btn {
+        font-size: 2rem;
+    }
 }
